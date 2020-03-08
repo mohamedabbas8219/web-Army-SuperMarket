@@ -1,0 +1,712 @@
+
+    // user name
+    $(document).ready(function(){
+      
+         var pusers = ["p1", "p2", "p3", "p4", "p5", "p6"];
+        var ppass = [1, 2, 3, 4, 5, 6];    
+         var busers = ["b1", "b2", "b3", "b4", "b5", "b6"];
+        var bpass = [1, 2, 3, 4, 5, 6];   
+        
+        
+        var medecine=["m","accupro","aspirin","med","heart"];
+        
+        var notfoundm=['a','aa','b','bb','c','cc','d','dd','n','nn']
+        var places=["zarqa","damietta","Mans.","Semplaween","a near pharmacy"];
+        var searchfound=0;
+        var nfplace='kn';
+        var gotopresc=0;
+        
+        var random = Math.floor((Math.random() * 10) + 1);
+       // var price=document.getElementById("price").innerHTML=random+25; //= "The link above now goes to www.cnn.com.";
+        
+        $("#search_clc").click(function(){
+            var searchtxt = document.searchform.search.value;
+           var searchfound=0;
+            var i;
+            
+                    
+            if(searchtxt==""||searchtxt==" ")
+                {
+                    alert("Enter medicin name ,first\n then, click search ");
+                }
+            else
+             {
+             for(i=0;i<=medecine.length;i++)
+              {
+                  if(searchtxt==medecine[i])
+                  {
+                    searchfound=1;
+                  alert("Found (^\\/^) ,\n Go to medecine page and select it ");
+                  break;
+                 }
+                }
+            if(searchfound==0)
+                {
+                    alert("Sorry not found Now");
+                   
+                     
+                    
+                    for(var x=0;x<notfoundm.length-1;x++)
+                        {
+                            var pcounter;
+                            if(x==0||x==1){pcounter=0;}
+                            else if(x==2||x==3){pcounter=1;}
+                            else if(x==4||x==5){pcounter=2;}
+                            else if(x==6||x==7){pcounter=3;}
+                            else if(x==8||x==9) {pcounter=4;}
+                            else{pcounter=x;}  
+                            
+                            
+                            
+                          if(searchtxt==notfoundm[x])
+                              {
+                                  nfplace='kn';
+                                  
+                               confirm(searchtxt+" is found in "+places[pcounter]+"\n Would you like to bring it for you ?");
+                              break;
+                              }
+                            else
+                             {
+                                 nfplace='unkn';
+                             }
+                        }
+                 // $("#search_clc").html("Get it&nbsp;&nbsp;&nbsp;");
+                }
+                
+                if(nfplace=='unkn')
+                    {
+                               confirm(searchtxt+" is found abroad \n Would you like to bring it for you ?");
+                    }
+                
+            }
+         });
+        
+        
+        $(".forgetpass").click(function(){
+            
+          
+                  alert("Your password is sent to your Momile");
+              
+            
+         });
+        
+          
+        $("#buyerclc").click(function(){
+            
+        var usertxt = document.buyer.bname.value;
+        var passtxt = document.buyer.bpass.value;
+        var comptxt=document.buyer.company.value;
+           
+              
+            
+             var i;
+            var bc=0;
+           var sureb=1;
+            
+         if(usertxt==""||passtxt=="")
+             {
+              alert("Enter Your name and password Correctly");
+             }
+            
+         else{
+            
+            if(comptxt=="Central_company")
+             {
+               var cr= confirm("First,\n Do You choose the correct pharmacy :"+comptxt+"\n     (1/3)");
+              if(cr==true)
+               {
+                sureb=1;
+               }
+                else {
+                    sureb=0;
+                bc=3;
+                }
+             }
+            else {sureb=1;}   
+           
+             if(sureb==1)  
+               {
+                 for (i = 0; i < busers.length; i++) 
+                 {
+                 if(usertxt==busers[i]&passtxt==bpass[i])
+                  {
+                      
+                              alert("Your are logged in Successfully \n \t\t\t    (2/3)");
+                             bc=3;
+                             confirm("Do you want to \nsave Your passwword on browser? \n     (3/3) ");
+                            
+                             
+                                 break;
+                             // $("#bname").html("vvvvvvv");
+                          
+                     }
+                     
+              
+                 }
+               }
+             else{}
+            
+            if(bc==0)
+                {
+                   alert("sorry, \n Your user name or password isnot correct \n   \t\t\t   (2/3)");
+                }
+             else{}
+            
+            if(sureb != 0)
+                {
+              document.getElementById("bname").value = "";
+              document.getElementById("bpass").value = "";
+                }
+         }
+             
+         });
+     
+        //##############################################################
+        
+        $("#phclc").click(function(){
+        var usertxt = document.ph.pname.value;
+        var passtxt = document.ph.ppass.value;
+         var comptxt=document.ph.pcompany.value;    
+        var i;
+            
+            if(usertxt==""||passtxt=="")
+                {
+                    alert("Enter Your name and password Correctly");
+                }
+            
+            else{
+                          
+            var c=0;
+           var sureph=1;
+            
+             if(comptxt=="Central_company")
+             {
+               var ccr= confirm("First,\n Do You choose the correct pharmacy :"+comptxt+"\n     (1/3)");
+              if(ccr==true)
+               {
+                sureph=1;
+               }
+                else {
+                    sureph=0;
+                c=3;
+                }
+             }
+            else {sureph=1;}
+           
+            if(sureph==1)
+                {
+                 for (i = 0; i < pusers.length; i++) 
+                   {
+                    if(usertxt==pusers[i]&passtxt==ppass[i])
+                        {
+                           alert("Your are logged in Successfully \n \t\t\t    (2/3)");
+                           c=3;
+                           confirm("Do you want to \nsave Your passwword on browser? \n  \t\t\t    (3/3) ");
+                          // $("#bname").value("vvvvvvv");
+                            break;
+                        }
+                        else{c=0;}
+                   }
+                  }
+            else{}
+            
+            if(c==0)
+                {
+                 alert("sorry, \n Your user name or password isnot correct \n   \t\t\t   (2/3)");
+                 //$(usertxt).hide(slow);
+                }
+            else {}
+            if(sureph != 0)
+                {
+                document.getElementById("pname").value ="";
+                document.getElementById("ppass").value ="";
+                }
+            
+            }
+        });
+        
+        
+        
+        
+          $("#logout").click(function(){
+             alert("You are logged out");
+         });
+        
+        
+        $("#save_regist").click(function(){
+      var ph=document.registform.ph_regist.value;
+    // if(ph == "Central_company")
+       // alert("Make sure that you've selected Pharmacy ");
+            
+              
+        var phu=document.registform.ph_u.value;
+         if(phu == "Patient"||ph == "Central_company")
+             {
+             var conph=confirm("Are sure that Your right pharmeacy is :"+ph+"\n and you are : "+phu);
+             }
+            if(conph==true)
+                {
+    
+
+     // user name
+    var userID = document.registform.username.value;
+    //user name should not be less than 7 charachters
+    if(userID=="x")
+        {
+        alert("choose a longer user name");
+        }
+    
+    // user name should not have space
+    if(userID.indexOf(" ") != -1)
+        alert("user name should not contain spaces")
+    // user name should be characters only
+    var letters = /^[A-Za-z]+$/;
+    if(!userID.match(letters))
+        alert("user ID should be characters only");
+    
+    // validate password
+    var p = document.registform.pass.value;
+    var cp = document.registform.cpass.value;
+    // password = confirm
+    if(p != cp)
+        alert("password does not match");
+    // password should be letters and numbers only
+    var alphanumeric = /^[A-Za-z0-9]+$/;
+    if(!p.match(alphanumeric))
+        alert("password must contain characters and numbers");
+    
+    // validate email, pattern that ensure email writen correctly
+    var mail = document.registform.email.value;
+    var format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(!mail.match(format))
+        alert("Type your e-mail correctly");
+    
+    // validate phone
+     var phone = document.registform.Phone.value;
+    if(phone.length<11)
+        alert("Enter Your phone correctly ");
+    var phonenum = /^[0-9]+$/;
+      if(!phone.match(phonenum))
+        alert("phone must contain  numbers only ");
+         
+            
+    // validate address
+    var adress = document.registform.address.value;
+    // make sure that user has select his city
+    
+    if(adress.length<3)
+        alert("Enter Your address correctly ");
+                }
+            else
+            {
+                
+            }
+   
+    
+    
+   
+            
+            
+            
+           });
+        
+        $("#comm_clc").click(function(){
+           var comm=document.commentform.commbox.value;
+           if(comm=="")
+              alert("Write Your comment first ,then send it"); 
+            else
+                alert("Your comment sent successfully");
+        });
+        
+        
+          $("#fs").click(function(){
+             gotopresc=1;
+              //alert("OK");
+              });
+        
+        
+          $("#gtp").click(function(){
+              // $("#fs").css("color","orange");
+                $("#downlink").toggle(500);
+                $("#downlink").show(500);
+                $("#downlink").hide(500);
+                $("#downlink").show(500);
+                 alert("Please , Finish Your selection process \nFirst , Click >> 'Finish Selecting'  \nThen ,click >> 'Finishh & Submit '");
+       
+                });
+        
+        
+          
+          $("#downlink").click(function(){
+             
+                $(".fs").hide(500);
+                $(".fs").show(500);
+                //$("#fs").hide(500);
+               // $("#fs").show(400);
+              
+              
+               // alert("Please , Finish Your selection process \nFirst , Click >> 'Finish Selecting'  \nThen ,click >> 'submit'");
+       
+               });
+        
+        
+        
+        
+        /////////////////////////////////////////////////////////////////////////////////////////////////////
+      //var row = table.insertRow(0);
+        
+         $(".navdel").click(function rowindex(x){
+            
+              var countrows = document.getElementById("navtbl").rows.length;
+             if(countrows==2)
+                 {
+                     alert("all data are deleted");
+                 }
+             else
+                 {
+             
+       var condel=confirm("You are about to delete this medicine,\n If You are sure ,click OK to confirm deleting\n     (1/3)");
+         var delidnv= document.getElementById("navdeltxt").value;
+            if(delidnv>=countrows||delidnv=="")
+             {
+                 delidnv=countrows-1;
+             }
+             else if(delidnv<=2)
+                 {
+                  delidnv=2;   
+                 }
+             
+             
+             
+             if(condel==true)
+            {
+              //if (x.rowIndex >1)
+             // {
+                document.getElementById("navtbl").deleteRow(delidnv);
+                alert("Deletion success \n              (2/3)");
+               document.getElementById("navdeltxt").value = "";
+             // }
+               // else {alert("Prescription is empty !  <1");}
+            }
+              
+             
+             
+           else
+               {
+                  alert("Deletion is canceled \n        (3/3)");
+                  
+               }
+           }
+            });
+         
+        
+        ////////////////////////////////////////////////////////////////////
+        
+           //addvalue
+           var id=0;
+         $("#addnav").click(function rowindex2(x){
+             
+          var countrows = document.getElementById("navtbl").rows.length;
+
+             var table = document.getElementById("navtbl");
+             var searchtxt = document.getElementById("addnmedtxt").value;
+            var enteredn=["a"];
+            // var repeate=0;
+             var searchfound=0;
+            var i;
+            var pplace;
+            var addin=2;
+             
+              
+            if(searchtxt==""||searchtxt==" ")
+                {
+                    alert("Enter medicin name ,first\n then, click search ");
+                }
+            else
+             {
+             for(i=0;i<=medecine.length;i++)
+              {
+                  if(searchtxt==medecine[i])
+                  {
+                      addin=0;
+                    searchfound=1;
+                  alert("It's already found now ,\n Go to medecine page and select it ");
+                  break;
+                 }
+                }
+             if(searchfound==0)
+                {
+                    //alert("Sorry not found Now");
+                    for(var x=0;x<notfoundm.length-1;x++)
+                        {
+                            var pcounter;
+                            if(x==0||x==1){pcounter=0;}
+                            else if(x==2||x==3){pcounter=1;}
+                            else if(x==4||x==5){pcounter=2;}
+                            else if(x==6||x==7){pcounter=3;}
+                            else if(x==8||x==9) {pcounter=4;}
+                            else{pcounter=x;}  
+                            
+                            
+                            
+                          if(searchtxt==notfoundm[x])
+                              {
+                                  nfplace='kn';
+                                  pplace=places[pcounter];
+                              // confirm(searchtxt+" is found in "+places[pcounter]+"\n Would you like to bring it for you ?");
+                              break;
+                              }
+                            else
+                             {
+                                 nfplace='unkn';
+                                 pplace=places[pcounter];
+                             }
+                        }
+                 // $("#search_clc").html("Get it&nbsp;&nbsp;&nbsp;");
+                
+                
+                   if(nfplace=='unkn')
+                    {
+                             var uknc=  confirm(searchtxt+" is found abroad \n Would you like to bring it for you ?");
+                            if(uknc==true)
+                             {
+                                 addin=1;
+                                // alert("We will bring it To You in the least time");
+                             }
+                        else
+                            {
+                                addin=0;
+                              alert("Not Added ");
+                            }
+                    }
+                   else{
+                   var knc=confirm(searchtxt+" is found in ' "+pplace+" ' \n Would you like to bring it for you ?");
+                     if(knc==true)
+                             {
+                                 addin=1;
+                                
+                             }
+                        else
+                            {
+                                addin=0; 
+                              alert("Not Added ");
+                            document.getElementById("addnmedtxt").value = "";    
+                            }
+                   }
+                 
+                }
+             }
+             
+        
+            if(addin==1)  {     
+                 id+=1;
+            var row = table.insertRow(countrows);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+             
+            cell1.innerHTML = id;
+            cell2.innerHTML = searchtxt;
+            cell3.innerHTML =(random+25)+ ".0 L.E.";
+           cell4.innerHTML =pplace;
+            cell5.innerHTML = "any instructions";
+            //price+=(random+25);
+               
+                alert("It's Added Successfully , \n and , We will bring it to You in least time ");
+                document.getElementById("addnmedtxt").value = "";
+            }
+               
+             
+               //////////////////////////////
+                 
+            });
+        
+        
+          
+        ////////////////////////////////////////////////////////////////////////////
+       
+      
+        
+         //addvalue
+         var idd=0;
+         $("#addav").click(function rowindex(x){
+              
+         var countrows = document.getElementById("avtbl").rows.length;
+
+             var table = document.getElementById("avtbl");
+             var searchtxt = document.getElementById("addmedtxt").value;
+            //var entered=["bbb"];
+            // var repeate=0;
+             var searchfound=0;
+            var i;
+                    //searchtxt==""||searchtxt==" "
+            if (searchtxt=="")
+                {
+                    alert("Enter medicin name ");
+                    searchfound=2;
+                }
+            else
+             {
+             for(i=0;i<medecine.length;i++)
+              {
+                  if(searchtxt==medecine[i])
+                  {
+                        searchfound=1;
+                  }
+                  
+              }
+             }
+             ////////////////////
+            /* if(searchfound==1)
+             {var e;
+               for(e=0;e<entered.length;e++)
+                {
+                  if(searchtxt==entered[e])
+                  {
+                       repeat=1;
+                    
+                   }
+                     else
+                      {
+                         repeat=0;
+                      }
+                  }
+              
+                 }
+                 if(repeat==1)
+                    {
+                       //  searchfound=2;
+                      alert("Entered before");
+                    
+                    }
+                  else
+                      {
+                           entered.push(searchtxt);
+                      }
+                 
+               */
+             ////////////////////         
+            if(searchfound==1)  {     
+                idd+=1;
+            var row = table.insertRow(countrows);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            
+             
+            cell1.innerHTML = idd;
+            cell2.innerHTML = searchtxt;
+            cell3.innerHTML =(random+20)+ ".0 L.E.";
+            cell4.innerHTML = "any instructions";
+            
+            alert("Success");
+            document.getElementById("addmedtxt").value = "";
+   
+            }
+            else if(searchfound==0)
+                {
+                    alert("Sorry not found \n , Enter medicine name successfully");
+                   document.getElementById("addmedtxt").value = "";
+                 // $("#search_clc").html("Get it&nbsp;&nbsp;&nbsp;");
+                }      
+            
+               //////////////////////////////
+                 
+            });
+        
+        
+          
+        ////////////////////////////////////////////////////////////////////////////
+       
+         $("#delav").click(function rowindex(x){
+             var delavtxt = document.getElementById("delavtxt").value;
+            // delavtxt=delavtxt+1;
+             var countrows = document.getElementById("avtbl").rows.length;
+             
+             
+            
+             if(countrows==2)
+                 {
+                     alert("all data are deleted");
+                 }
+             else
+                 {
+          var condel=confirm("You are about to delete this medicine,\n If You are sure ,click OK to confirm deleting\n    (1/3)");
+
+                   if(countrows==3)
+                       {
+                           if(delavtxt==2)
+                               {delavtxt=3;}
+                       }
+                     
+                     
+                     
+             if(delavtxt>=countrows||delavtxt=="")
+             {
+                 delavtxt=countrows-1;
+             }
+             else if(delavtxt<=1)
+                 {
+                  delavtxt=2;   
+                 }
+              else 
+                 {
+                   delavtxt=3;
+                 }
+             
+             
+             if(condel==true)
+            {
+              //if (x.rowIndex >1)
+             // {
+                if(delavtxt==2)
+                    {
+                var rowdel=confirm(" Delete first row ? \n        (2/3)"+delavtxt);
+                 if(rowdel==true)
+                  {
+                   document.getElementById("avtbl").deleteRow(delavtxt);
+                      
+                    alert("Deletion success\n         (3/3)");
+                    document.getElementById("delavtxt").value = "";  
+                  }
+                 else {
+                     alert("Enter id of record ,not shown id\n          (3/3)");}
+               // else {alert("Prescription is empty !  <1");}
+                 }
+                else{
+                     document.getElementById("avtbl").deleteRow(delavtxt);
+                    alert("Deletion success\n         (3/3)");
+                    document.getElementById("delavtxt").value = "";
+                }
+            }
+          
+           else
+               {
+                  alert("Deletion is canceled\n        (2,3/3)");
+                  
+               }
+          }
+            });
+        
+        /////////////////////////////////////////////////
+        
+        /* $("#prescsave").click(function(){
+           
+              
+              // $("#fs").css("color","orange");
+               $("#progress").hide(500);
+               $("#progress").toggle(500);
+                $("#progress").show(500);
+                $("#progress").show(500);
+                alert("Saved Sccessfully");
+          });
+        */
+        
+        
+        
+   });
+
+	 

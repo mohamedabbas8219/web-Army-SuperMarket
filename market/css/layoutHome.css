@@ -1,0 +1,149 @@
+
+
+html{overflow-y:scroll; }
+body{margin:0; padding:0; font-size:12px; font-family:verdana, Arial, Helvetica, sans-serif; color:#333333; background-color:#F2F2F2;}
+/*                My code        */
+
+.m1css {
+    background-color:silver;
+    height: 40px;
+    weight:60px;
+    margin: auto;
+    border-radius: 10px;
+   color: #333333;
+    box-shadow: 0 2px 2px white ;
+    text-align: center;
+    text-shadow: 0 -3px 5px white ;
+
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+
+.m1bcss{
+    background-color:silver;
+    height: 40px;
+    width: 180px;
+    margin: auto;
+    
+    border-style: solid;
+     border-radius: 10px;
+   
+    box-shadow: 0 2px 2px  #603747;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Helvetica;
+    
+}
+
+.m1bcss a{
+    text-decoration: none;
+    color: blueviolet;  
+}
+
+.m1bcss a:hover{
+    color: red;
+   
+}
+
+#breadcrumb .breadcrumb p{margin:0 0 10px 0; padding:0; line-height:1.8em;}
+
+.justify{text-align:justify;}
+.bold{font-weight:bold;}
+.center{text-align:center;}
+.right{text-align:right;}
+.nostart{margin:0; padding:0; list-style-type:none;}
+
+.clear{clear:both;}
+br.clear{clear:both; margin-top:-15px;}
+
+a{outline:none; text-decoration:none;}
+
+.fl_left, .imgl{float:left;}
+.fl_right, .imgr{float:right;}
+
+img{display:block; margin:0; padding:0; border:none;}
+.imgl, .imgr{border:1px solid #999999; padding:5px;}
+.imgl{margin:0 8px 8px 0; clear:left;}
+.imgr{margin:0 0 8px 8px; clear:right;}
+
+/* ----------------------------------------------Wrapper------------------------------------- */
+
+div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
+div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, div.wrapper h6{margin:0; padding:0; font-size:20px; font-weight:normal; line-height:normal; font-family:Georgia, "Times New Roman", Times, serif;}
+.col0{color:#313131; background-image: url(paper.gif); border-top:5px solid #313131;}
+.col1, .col1 a{color:#8B785F; }
+.col2{color:blueviolet; background-image:url(gif_color_images/paper.gif);   }
+.col3{color:#313131; background--image: url(paper.gif);}
+.col4{color:#666666; background--image: url(paper.gif);}
+.col4 a{color:#746550; background-image: url(paper.gif);}
+.col5{color:#CCCCCC; background-color:#48282F;}
+.col5 a{color:#E5E2C9; background-color:#48282F;}
+.col6, .col6 a{color:#767772; background-color:#FFFFFF;}
+
+
+
+#topnav{width: 100%;}
+
+/* ----------------------------------------------Generalise---------width:960px;---------------------------- */
+
+#header, #topbar11, #topnav, #breadcrumb, #container, #footer, #copyright{display:block; position:relative; width:90%; margin:0 auto;}
+
+/* ----------------------------------------------Header------------------------------------- */
+/* ----------------------------------------------tryx------------------------------------- */
+#header, #topbar11, #topnav, #breadcrumb, #container, #footer, #copyright{display:block; position:relative; width:960px; margin:0 auto;}
+/* ----------------------------------------------x------------------------------------- */
+#header{padding:0 0 20px 0;}
+#header #logo{display:block; float:none; width:100%; overflow:hidden;}
+#header #logo h1, #header p, #header ul{margin:0; padding:0; list-style:none; line-height:normal;}
+#header #logo h1{font-size:36px;}
+#header h1 a{color:red; background-color:#F8F7DF;}
+#header .fl_right{display:block; float:right; width:330px; margin:17px 0 0 0; padding:0; text-align:right;}
+#header .fl_right ul{margin-bottom:10px;}
+#header li{display:inline; margin:0 0 0 8px; padding:0 0 0 10px;  }
+#header li.last{margin-right:0; padding-right:0; border:none;}
+/* ----------------------------------------------links------------------------------------- */
+#breadcrumb {display:block;  }
+#breadcrumb a{color:blue; background-color:none;}
+/* ----------------------------------------------Homepage Services------------------------------------- */
+#hpage{display:block; width:100%; margin:10px 0;}
+#hpage ul{  list-style:none; line-height:normal; align-content: center; }
+#hpage li{display:block; float:left; width:220px; margin:0 10px 0 10px; padding:0;}
+#hpage li.last{margin-right:0;}
+#hpage li div.imgholder{display:block; margin:0 10px 0 10px; padding:4px; color:#666666; background-color:#EDECE4; border:1px solid #BEBB9E;}
+#hpage p{margin:0 0 10px 0; padding:0; line-height:1.8em; font-size: 1.3em;}
+/* ---------------------------------------------- top nav------------------------------------- */
+#topnav{height:28px; width:97%; align-content: center; overflow:hidden; border:5px silver solid; margin-left: 0px; margin-right:10px;  }
+#topnav ul{ width:100%;  height:2.6px; margin:0; padding:3; background-color:#293f5a;  font-size: 1.1em; border:5px red;}
+/*   */
+#topnav ul li { height:28px; margin-top: 6px; text-align:justify; border: 22px red; margin-left: 0px; margin-right: 0px;}
+#topnav ul li ul{display:none; margin-top: 22px; }
+
+#topnav ul li.active ul{display:block; position:absolute; top:0px; bottom: 2em;  left:0; width:100%; height:29px;   }
+
+#topnav li{display:inline-block; bottom:0px; margin-top: 8px; height:125px ;}
+#topnav li.last{margin-right:10px;}
+
+#topnav ul ul li.last a{margin-right:0; padding:0; border-right:none;}
+/*  height of li*/
+ #topnav ul li a{ color:#293f7a; background-color:#B5B5B5; font-size:1.2em; padding:10px 10px 10px 10px; 
+          display:block;  height:35px; box-shadow: 2px 2px 2px #4d4d4d;}
+#topnav ul li a:visited{ color:#293f5a;; background-color: #d4d4d4; font-weight: bold; font-size: 1.2em; padding:10px 10px 10px 10px;} /*******/
+#topnav ul li a:hover{ color:#ffffff; background-color: #293f5a; font-size:1.2em; padding:10px 8px 10px 5px; }   /*********/
+
+#topnav{width: 100%; height:50px;}
+
+#topnav a{ align-content:center; float: right;}
+
+
+/* ---------------------------------------------- fatora------------------------------------- */
+
+
+
+
+/* ---------------------------------------------- fatora------------------------------------- */
+
+
+
+
